@@ -1,5 +1,5 @@
-@import "/css/reset.css";
-@import "/css/normalize.css";
+@import "./reset.css";
+@import "./normalize.css";
 /* Fonts */
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;700&display=swap');
@@ -45,10 +45,47 @@ a {
     margin-left: auto;
 }
 
+/* Smallest Grid system ever */
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.col-left, .col-right, .col-full {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.col-left {
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+
+.col-right {
+    -ms-flex: 0 0 80%;
+    flex: 0 0 80%;
+    max-width: 80%;
+}
+
 .flex-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.row-just {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
@@ -63,6 +100,7 @@ a {
 
 .global-nav .logo {
     max-width: 200px;
+    padding-left: 15px;
 }
 
 .global-nav .logo a {
@@ -82,16 +120,26 @@ a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    padding-right: 15px;
 }
 
 .nav-menu .nav-item a {
     text-decoration: none;
     color: #3D3D3D;
     font-size: 16px;
+    padding-bottom: 4px;
+}
+
+.nav-menu .nav-item.active a {
+    border-bottom: 1px solid #000000;
 }
 
 .nav-menu .nav-item a:hover, .nav-menu .nav-item a:focus {
     color: #D71015;
+}
+
+.nav-menu .nav-item.active a:hover, .nav-menu .nav-item.active a:focus {
+    border-bottom: 1px solid #D71015;
 }
 
 .nav-menu .nav-item {
@@ -195,4 +243,458 @@ a {
 .btn-red:hover, .btn-red:focus {
     background-color: #D71015;
     color: #ffffff;
+}
+
+/* Checkboxes */
+
+/* Checkboxes anad radio buttons */
+
+.checkbox, .radio {
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1.25;
+    position: relative;
+}
+
+.checkbox input, .radio input {
+    cursor: pointer;
+}
+
+.checkbox>input, .radio>input {
+    width: 28px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+label.checkbox, label.radio {
+    color: #0C0C0C;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.4;
+    transition: color .1s linear;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+label.icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+label.icon i {
+    margin-right: 11px;
+}
+
+label.icon i img {
+    width: 20px;
+    height: 20px;
+}
+
+.checkbox-mark, .radio-mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 0;
+    background-color: #fff;
+    box-shadow: inset 0 0 0 2px #000000;
+    transition: background-color .15s linear, box-shadow .15s linear;
+}
+
+.radio-mark {
+    border-radius: 50%;
+}
+
+.checkbox-mark:after {
+    position: absolute;
+    top: 6px;
+    left: 9px;
+    width: 5px;
+    height: 9px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    content: "";
+    transition: -webkit-transform .1s ease-out;
+    transition: transform .1s ease-out;
+    transition: transform .1s ease-out, -webkit-transform .1s ease-out;
+    -webkit-transform: rotate(40deg) scale(.25);
+    transform: rotate(40deg) scale(.25);
+}
+
+.radio-mark:after {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #000000;
+    content: "";
+    transition: -webkit-transform .1s ease-out;
+    transition: transform .1s ease-out;
+    transition: transform .1s ease-out, -webkit-transform .1s ease-out;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+
+.checkbox>input:checked~.checkbox-mark:after, .checkbox>input:checked~.checkbox-mark:before {
+    opacity: 1!important;
+    -webkit-transform: rotate(40deg) scale(1);
+    transform: rotate(40deg) scale(1);
+}
+
+.radio>input:checked~.radio-mark:after {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.checkbox:not(.is-toggle)>input:checked~.checkbox-mark {
+    background-color: #000000;
+    box-shadow: inset 0 0 0 2px #000000!important;
+}
+
+.checkbox[disabled]>.checkbox-mark, .radio[disabled]>.radio-mark {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 2px rgba(91, 52, 120, .075)!important;
+}
+
+.checkbox[disabled], .radio[disabled], fieldset[disabled] .checkbox, fieldset[disabled] .radio {
+    color: #9c94a2;
+    cursor: not-allowed;
+}
+
+/* Code for content section */
+
+.content-area {
+    margin-top: 30px;
+}
+
+.content-area .back-button a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 40px;
+}
+
+.content-area .back-button a svg {
+    margin-right: 10px;
+}
+
+.content-area .back-button i {
+    color: #000000;
+    font-weight: 700;
+}
+
+.content-area .back-button a:hover i, .content-area .back-button a:focus i, .content-area .back-button a.active i {
+    color: #D71015;
+}
+
+.content-area .back-button a:hover svg path, .content-area .back-button a:focus path, .content-area .back-button a.active path {
+    fill: #D71015;
+}
+
+.heading-content {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1;
+    margin: 0;
+    margin-top: 5px;
+}
+
+.filter-section {
+    padding-top: 40px;
+    padding-left: 5px;
+}
+
+.filter-section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 28px;
+}
+
+.filter-categories li {
+    margin-bottom: 15px;
+}
+
+.author-section ul li {
+    margin-bottom: 15px;
+}
+
+.author-section {
+    padding-left: 30px;
+    padding-top: 15px;
+}
+
+.kt-article-list-container {
+    border-left: 1px solid #2E2E2E;
+    padding-left: 150px;
+    margin-top: 40px;
+}
+
+.kt-article-list-container .kt-article-list-item .kt-article-link {
+    display: block;
+}
+
+.kt-article-list-container .kt-article-list {}
+
+.kt-article-list-container .kt-article-list .kt-article-list-item {
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #CACACA;
+    padding-bottom: 15px;
+}
+
+.kt-article-list-container .kt-article-list .kt-podcast {
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.kt-article-list-container .kt-article-list .kt-podcast audio {
+    width: 100%;
+}
+
+.kt-article-list-container .kt-article-list .kt-article-list-item:last-child {
+    border-bottom: 1px solid transparent;
+}
+
+.kt-article-list-container .kt-article-item-info p {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
+    color: #2E2E2E;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    max-width: calc(100% - 20px);
+}
+
+.kt-article-list-container .kt-article-list-item .kt-article-link:hover p, .kt-article-list-container .kt-article-list-item .kt-article-link:focus p {
+    color: #D71015;
+}
+
+.kt-article-list-container .kt-article-meta span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: #4A4A4A;
+}
+
+.kt-article-list-container .kt-article-meta span:after {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 15px;
+    background-color: #000;
+    margin-left: 2px;
+    vertical-align: middle;
+}
+
+.kt-article-list-container .kt-article-meta span:last-child:after {
+    display: none;
+}
+
+/* ------------------------------ PAGINTION BEGIN ------------------------------ */
+
+.pagination {
+    margin-top: 50px;
+}
+
+.pager {
+    margin: 0 0 50px;
+    font-size: 0;
+    text-align: center;
+}
+
+.pager__item {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0 2px;
+}
+
+.pager__item.active .pager__link {
+    background-color: #D71015;
+    border-color: #D71015;
+    color: #fff;
+    text-decoration: none;
+}
+
+.pager__item--prev svg, .pager__item--next svg {
+    width: 30px;
+    height: 26px;
+    padding-right: 10px;
+}
+
+.pager__item--prev .pager__link, .pager__item--next .pager__link {
+    width: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.pager__item--prev .pager__link:hover, .pager__item--prev .pager__link:focus, .pager__item--prev .pager__link:active, .pager__item--next .pager__link:hover, .pager__item--next .pager__link:focus, .pager__item--next .pager__link:active {
+    background-color: transparent;
+    color: #D71015;
+}
+
+.pager__item--prev .pager__link:hover svg path, .pager__item--prev .pager__link:focus svg path, .pager__item--next .pager__link:hover svg path, .pager__item--next .pager__link:focus svg path {
+    fill: #D71015;
+}
+
+.pager__item--next .pager__link svg {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+}
+
+.pager__link {
+    position: relative;
+    border-radius: 4px;
+    display: block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: -1px;
+    color: #2f3640;
+    text-decoration: none;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.pager__link:hover, .pager__link:focus, .pager__link:active {
+    background-color: #D71015;
+    border-color: #D71015;
+    color: #fff;
+    text-decoration: none;
+}
+
+.pager__link:hover svg path, .pager__link:focus svg path, .pager__link:active svg path {
+    fill: #fff;
+}
+
+.pager .pager__item.active+.pager__item .pager__link, .pager .pager__item:hover+.pager__item .pager__link {
+    border-left-color: #D71015;
+}
+
+@media screen and (max-width: 576px) {
+    .pager__item {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    .pager__item.active, .pager__item:first-of-type, .pager__item:last-of-type, .pager__item:nth-of-type(2), .pager__item:nth-last-of-type(2) {
+        position: initial;
+        top: initial;
+        left: initial;
+    }
+    .pager__item.active+li {
+        position: initial;
+        top: initial;
+        left: initial;
+    }
+}
+
+/* ------------------------------ PAGINTION END ------------------------------ */
+
+.kt-article-list-container .kt-article-heading header {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
+    color: #2E2E2E;
+    margin-bottom: 5px;
+}
+
+.kt-article-list-container .kt-article-heading header span {
+    display: block;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: #4A4A4A;
+}
+
+.kt-article-list-container .kt-article-content {
+    margin-top: 30px;
+    min-height: 500px;
+    margin-bottom: 200px;
+}
+
+.kt-article-list-container .kt-article-content p {
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+    line-height: 1.5;
+    /* max-width: calc(100% - 300px); */
+    margin-bottom: 20px;
+}
+
+.kt-article-list-container .kt-article-content p.para-small {
+    max-width: calc(100% - 300px);
+}
+
+.kt-article-list-container .kt-article-image {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.kt-article-list-container .kt-article-image img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.kt-article-content .kt-article-num {
+    margin-top: 20px;
+}
+
+.kt-article-content .kt-article-num li {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.kt-article-content .embed-responsive {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+
+.kt-article-content .embed-responsive.embed-responsive-16by9::before {
+    padding-top: 56.25%;
+}
+
+.kt-article-content .embed-responsive::before {
+    display: block;
+    content: "";
+}
+
+.kt-article-content .embed-responsive .embed-responsive-item, .kt-article-content .embed-responsive embed, .kt-article-content .embed-responsive iframe, .kt-article-content .embed-responsive object, .embed-responsive video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
