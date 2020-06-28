@@ -7,6 +7,7 @@
     <title>Ktvity - Tutorials</title>
     <meta name="description" content="Knowledge tranfer that will increase your productivty">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="js/jquery-2.1.4.min.js"></script>
 </head>
 
 <body>
@@ -15,7 +16,7 @@
             <div class="container">
                 <div class="row row-just">
                     <div class="logo">
-                        <a href="/index.html">
+                        <a href="index.html">
                             <img src="assets/images/ktvity-logo.svg" alt="ktvity">
                         </a>
                     </div>
@@ -37,7 +38,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="Resources.html">
+                                <a href="resources.html">
                                     Resources
                                 </a>
                             </li>
@@ -53,13 +54,17 @@
                 </div>
             </div>
         </nav>
-        <section class="content-area">
+        <section class="content-header">
             <div class="container">
                 <div class="row">
                     <div class="col-full">
-                        <h1 class="heading-content">Writing</h1>
+                        <h1 class="heading-content">Tutorials</h1>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section class="content-area">
+            <div class="container">
                 <div class="row">
                     <div class="col-left">
                         <div class="filter-section">
@@ -108,10 +113,10 @@
                         </div>
                     </div>
                     <div class="col-right">
-                        <div class="kt-article-list-container">
+                        <div id="content-1" class="kt-article-list-container">
                             <ul class="kt-article-list">
                                 <li class="kt-article-list-item">
-                                    <a href="/Tutorials-details.html" class="kt-article-link">
+                                    <a href="/writing-details.html" class="kt-article-link">
                                         <div class="kt-article-item-info">
                                             <p title="Goodbye, Clean Code">
                                                 Goodbye, Clean Code
@@ -129,7 +134,7 @@
                                     </a>
                                 </li>
                                 <li class="kt-article-list-item">
-                                    <a href="/Tutorials-details.html" class="kt-article-link">
+                                    <a href="/writing-details.html" class="kt-article-link">
                                         <div class="kt-article-item-info">
                                             <p title="Users see how your Product can Help them Achieve their Goals">
                                                 Users see how your Product can Help them Achieve their Goals
@@ -147,7 +152,7 @@
                                     </a>
                                 </li>
                                 <li class="kt-article-list-item">
-                                    <a href="/Tutorials-details.html" class="kt-article-link">
+                                    <a href="/writing-details.html" class="kt-article-link">
                                         <div class="kt-article-item-info">
                                             <p title="Goodbye, Clean Code">
                                                 Goodbye, Clean Code
@@ -165,7 +170,7 @@
                                     </a>
                                 </li>
                                 <li class="kt-article-list-item">
-                                    <a href="/Tutorials-details.html" class="kt-article-link">
+                                    <a href="/writing-details.html" class="kt-article-link">
                                         <div class="kt-article-item-info">
                                             <p title="Users see how your Product can Help them Achieve their Goals">
                                                 Users see how your Product can Help them Achieve their Goals
@@ -183,7 +188,7 @@
                                     </a>
                                 </li>
                                 <li class="kt-article-list-item">
-                                    <a href="/Tutorials-details.html" class="kt-article-link">
+                                    <a href="/writing-details.html" class="kt-article-link">
                                         <div class="kt-article-item-info">
                                             <p title="Goodbye, Clean Code">
                                                 Goodbye, Clean Code
@@ -201,7 +206,115 @@
                                     </a>
                                 </li>
                                 <li class="kt-article-list-item">
-                                    <a href="/Tutorials-details.html" class="kt-article-link">
+                                    <a href="/writing-details.html" class="kt-article-link">
+                                        <div class="kt-article-item-info">
+                                            <p title="Goodbye, Clean Code">
+                                                Goodbye, Clean Code
+                                            </p>
+                                            <div class="kt-article-meta">
+                                                <span>
+                                                    23rd April, 2020
+                                                </span>
+                                                <span>
+                                                    10 min read
+                                                </span>
+
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="kt-article-list-item">
+                                    <a href="/writing-details.html" class="kt-article-link">
+                                        <div class="kt-article-item-info">
+                                            <p title="Goodbye, Clean Code">
+                                                Goodbye, Clean Code
+                                            </p>
+                                            <div class="kt-article-meta">
+                                                <span>
+                                                    23rd April, 2020
+                                                </span>
+                                                <span>
+                                                    10 min read
+                                                </span>
+
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="kt-article-list-item">
+                                    <a href="/writing-details.html" class="kt-article-link">
+                                        <div class="kt-article-item-info">
+                                            <p title="Goodbye, Clean Code">
+                                                Goodbye, Clean Code
+                                            </p>
+                                            <div class="kt-article-meta">
+                                                <span>
+                                                    23rd April, 2020
+                                                </span>
+                                                <span>
+                                                    10 min read
+                                                </span>
+
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="kt-article-list-item">
+                                    <a href="/writing-details.html" class="kt-article-link">
+                                        <div class="kt-article-item-info">
+                                            <p title="Goodbye, Clean Code">
+                                                Goodbye, Clean Code
+                                            </p>
+                                            <div class="kt-article-meta">
+                                                <span>
+                                                    23rd April, 2020
+                                                </span>
+                                                <span>
+                                                    10 min read
+                                                </span>
+
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="kt-article-list-item">
+                                    <a href="/writing-details.html" class="kt-article-link">
+                                        <div class="kt-article-item-info">
+                                            <p title="Goodbye, Clean Code">
+                                                Goodbye, Clean Code
+                                            </p>
+                                            <div class="kt-article-meta">
+                                                <span>
+                                                    23rd April, 2020
+                                                </span>
+                                                <span>
+                                                    10 min read
+                                                </span>
+
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="kt-article-list-item">
+                                    <a href="/writing-details.html" class="kt-article-link">
+                                        <div class="kt-article-item-info">
+                                            <p title="Goodbye, Clean Code">
+                                                Goodbye, Clean Code
+                                            </p>
+                                            <div class="kt-article-meta">
+                                                <span>
+                                                    23rd April, 2020
+                                                </span>
+                                                <span>
+                                                    10 min read
+                                                </span>
+
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="kt-article-list-item">
+                                    <a href="/writing-details.html" class="kt-article-link">
                                         <div class="kt-article-item-info">
                                             <p title="Goodbye, Clean Code">
                                                 Goodbye, Clean Code
@@ -224,6 +337,19 @@
 
 
                         </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="pagination-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-left">
+
+                    </div>
+                    <div class="col-right">
                         <div class="pagination">
                             <nav>
                                 <ul class="pager">
@@ -257,7 +383,6 @@
                                 </ul>
                             </nav>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -272,9 +397,19 @@
         </footer>
     </div>
 
+
+    <script src="js/jquery.mCustomScrollbar.js"></script>
     <script src="js/ktvity-script.js"></script>
     <script>
+        (function ($) {
+            $(window).on("load", function () {
 
+                $("#content-1").mCustomScrollbar({
+                    theme: "dark"
+                });
+
+            });
+        })(jQuery);
     </script>
 </body>
 
